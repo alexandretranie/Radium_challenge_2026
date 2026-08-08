@@ -1,59 +1,58 @@
 # Radium Challenge 2026
 
-Classification d'images — challenge Radium 2026.
+Image classification — Radium 2026 challenge.
 
-## Installation
+## Setup
 
-Le projet utilise [uv](https://docs.astral.sh/uv/) pour la gestion des dépendances.
+This project uses [uv](https://docs.astral.sh/uv/) for dependency management.
 
 ```bash
-git clone <url-du-depot>
+git clone <repo-url>
 cd Radium_challenge_2026
 uv sync
 ```
 
-`uv sync` recrée l'environnement à l'identique depuis `uv.lock` (Python 3.12, PyTorch 2.13).
-Aucune activation manuelle n'est nécessaire : préfixer les commandes par `uv run`.
+`uv sync` recreates the environment exactly from `uv.lock` (Python 3.12, PyTorch 2.13).
+No manual activation needed — just prefix commands with `uv run`.
 
 ```bash
 uv run python train.py
 uv run jupyter lab
 ```
 
-## Données
+## Data
 
-**Les données ne sont pas versionnées** (255 Mo de labels + 2500 images, au-delà des
-limites GitHub). Elles sont à récupérer depuis la plateforme du challenge et à placer
-à la racine du projet :
+**The data is not versioned** (255 MB of labels plus 2500 images, beyond GitHub's limits).
+Download it from the challenge platform and place it at the project root:
 
 ```
 Radium_challenge_2026/
-├── label_Hnl61pT.csv       # labels (255 Mo)
-├── annotated_labels.json   # annotations, 2000 entrées
+├── label_Hnl61pT.csv       # labels (255 MB)
+├── annotated_labels.json   # annotations, 2000 entries
 ├── train-images/           # 2000 images
 └── test-images/            # 500 images
 ```
 
-## Environnement
+## Environment
 
 | | |
 |---|---|
 | Python | 3.12.12 |
-| PyTorch | 2.13.0 (accélération MPS sur Apple Silicon) |
+| PyTorch | 2.13.0 (MPS acceleration on Apple Silicon) |
 | torchvision | 0.28.0 |
 | pandas | 3.0.5 |
 | scikit-learn | 1.9.0 |
 
-Vérifier que le GPU est disponible :
+Check that the GPU is available:
 
 ```bash
 uv run python -c "import torch; print(torch.backends.mps.is_available())"
 ```
 
-## Dépendances
+## Dependencies
 
 ```bash
-uv add <paquet>      # ajouter
-uv remove <paquet>   # retirer
-uv tree              # arbre des dépendances
+uv add <package>      # add
+uv remove <package>   # remove
+uv tree               # dependency tree
 ```
