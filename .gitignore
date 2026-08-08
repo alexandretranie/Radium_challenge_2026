@@ -1,13 +1,13 @@
-# --- Données (exclues du dépôt, à récupérer depuis la source du challenge) ---
-# label_Hnl61pT.csv fait 255 Mo : au-dessus de la limite GitHub de 100 Mo/fichier.
-# Les dossiers d'images représentent 2500 fichiers pour 67 Mo.
+# --- Data (not versioned, download from the challenge platform) ---
+# label_Hnl61pT.csv is 255 MB: above GitHub's 100 MB per-file limit.
+# The image folders hold 2500 files for 67 MB.
 label_Hnl61pT.csv
 annotated_labels.json
 train-images/
 test-images/
 *.csv
 
-# --- Environnement virtuel ---
+# --- Virtual environment ---
 .venv/
 venv/
 env/
@@ -28,7 +28,7 @@ dist/
 .ipynb_checkpoints/
 *.ipynb_checkpoints
 
-# --- Modèles et sorties d'entraînement ---
+# --- Models and training outputs ---
 *.pt
 *.pth
 *.ckpt
@@ -57,6 +57,6 @@ outputs/
 # --- IDE ---
 .idea/
 *.swp
-# .vscode/settings.json est versionné volontairement (chemin de l'interpréteur)
+# .vscode/settings.json is versioned on purpose (interpreter path)
 .vscode/*
 !.vscode/settings.json
